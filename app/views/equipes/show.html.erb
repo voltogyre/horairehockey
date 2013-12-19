@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @equipe.name %>
+</p>
+
+<p>
+  <strong>Categ:</strong>
+  <%= @categs.find(@equipe.categ).name %>
+</p>
+
+<%= link_to 'Edit', edit_equipe_path(@equipe) %> |
+<%= link_to 'Back', equipes_path %>

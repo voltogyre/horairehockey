@@ -1,0 +1,29 @@
+<h1>Listing equipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Categ</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @equipes.each do |equipe| %>
+      <tr>
+        <td><%= equipe.name %></td>
+        <td><%= @categs.find(equipe.categ).name %></td>
+        <td><%= link_to 'Show', equipe %></td>
+        <td><%= link_to 'Edit', edit_equipe_path(equipe) %></td>
+        <td><%= link_to 'Destroy', equipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Equipe', new_equipe_path %>
